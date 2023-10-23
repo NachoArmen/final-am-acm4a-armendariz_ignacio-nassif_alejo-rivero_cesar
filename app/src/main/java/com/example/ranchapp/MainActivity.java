@@ -141,8 +141,19 @@ public class MainActivity extends AppCompatActivity {
         ViewGroup rootView = findViewById(android.R.id.content);
         rootView.addView(linearLayout);
     }
+    public void logout(View view){
+        View btnLogin = findViewById(R.id.login);
+        View btnAction = findViewById(R.id.Registro);
+        View btnLogout = findViewById(R.id.logout);
+        View text = findViewById(R.id.textView);
+        btnLogin.setVisibility(View.VISIBLE);
+        btnAction.setVisibility(View.VISIBLE);
+        text.setVisibility(View.VISIBLE);
+        btnLogout.setVisibility(View.GONE);
 
 
+
+    }
 
 
 
