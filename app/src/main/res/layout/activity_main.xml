@@ -4,58 +4,73 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFC107"
     tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="200dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="logout"
+            android:text="@string/logout"
+            android:visibility="gone">
+
+
+        </Button>
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="login"
+            android:text="@string/login"
+            android:textColorHighlight="#4CAF50"
+            android:textColorLink="#4CAF50">
+
+        </Button>
+
+        <Button
+            android:id="@+id/Registro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="singUp"
+            android:text="@string/registro">
+
+
+        </Button>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="RANCHAPP"
+        android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textSize="50sp"
-        />
+        app:layout_constraintVertical_bias="0.161" />
 
-    <Button
-        android:id="@+id/Registro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="singUp"
-        android:text="@string/registro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.745"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView">
-
-
-    </Button>
-    <Button
-        android:visibility="gone"
-        android:id="@+id/logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="logout"
-        android:text="@string/logout"
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/imageFilterView2"
+        android:layout_width="243dp"
+        android:layout_height="234dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@drawable/party_face_emoji" />
 
-
-    </Button>
-
-    <Button
-        android:id="@+id/login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="login"
-        android:text="@string/login"
-        app:layout_constraintEnd_toEndOf="@id/Registro"
-        app:layout_constraintEnd_toStartOf="@id/Registro"
-        app:layout_constraintHorizontal_bias="0.588"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView">
-
-    </Button>
 </androidx.constraintlayout.widget.ConstraintLayout>
