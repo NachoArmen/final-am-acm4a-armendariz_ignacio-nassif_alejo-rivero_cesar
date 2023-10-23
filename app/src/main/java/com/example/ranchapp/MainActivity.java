@@ -32,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
         btnAction.setVisibility(View.GONE);
         text.setVisibility(View.GONE);
 
-
+        View imagen = findViewById(R.id.img_principal);
+        imagen.setVisibility(View.GONE);
         // Crea un nuevo TextView
         TextView myText = new TextView(view.getContext());
         myText.setText("Logueate");
@@ -69,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 passwordEditText.setVisibility(View.GONE);
                 confirmButton.setVisibility(View.GONE);
                 btnLogout.setVisibility(View.VISIBLE);
-
+                imagen.setVisibility(View.VISIBLE);
                 // btnLogin.setVisibility(View.VISIBLE);
                 // btnAction.setVisibility(View.VISIBLE);
                 text.setVisibility(View.VISIBLE);
@@ -90,6 +91,9 @@ public class MainActivity extends AppCompatActivity {
         btnAction.setVisibility(View.GONE);
         text.setVisibility(View.GONE);
 
+
+        View imagen = findViewById(R.id.img_principal);
+        imagen.setVisibility(View.GONE);
         // Crea un nuevo TextView
         TextView myText = new TextView(view.getContext());
         myText.setText("Logueate");
@@ -132,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
                 confirmButton.setVisibility(View.GONE);
                 editTextMail.setVisibility(View.GONE);
                 btnLogin.setVisibility(View.VISIBLE);
+                imagen.setVisibility(View.VISIBLE);
                 // btnAction.setVisibility(View.VISIBLE);
                 text.setVisibility(View.VISIBLE);
 
