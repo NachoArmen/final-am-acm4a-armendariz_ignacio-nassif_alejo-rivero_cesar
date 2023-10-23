@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Ranchapp</string>
+    <string name="registro">Registro</string>
+    <string name="logout">logout</string>
+    <string name="login">Login</string>
+
 </resources>
