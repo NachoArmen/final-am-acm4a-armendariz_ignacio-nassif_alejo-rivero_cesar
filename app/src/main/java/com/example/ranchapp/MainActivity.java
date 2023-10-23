@@ -50,5 +50,32 @@ public class MainActivity extends AppCompatActivity {
         Button confirmButton = new Button(view.getContext());
         confirmButton.setText("Login"); // Establece el texto del botón
 
-       
+        // Crea un nuevo LinearLayout que actuará como contenedor
+        LinearLayout linearLayout = new LinearLayout(view.getContext());
+        linearLayout.setOrientation(LinearLayout.VERTICAL);
+
+        // Agrega el TextView y el EditText al LinearLayout
+        linearLayout.addView(myText);
+        linearLayout.addView(editText);
+        linearLayout.addView(passwordEditText);
+        linearLayout.addView(confirmButton);
+        confirmButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myText.setVisibility(View.GONE);
+                editText.setVisibility(View.GONE);
+                passwordEditText.setVisibility(View.GONE);
+                confirmButton.setVisibility(View.GONE);
+                btnLogout.setVisibility(View.VISIBLE);
+
+                // btnLogin.setVisibility(View.VISIBLE);
+                // btnAction.setVisibility(View.VISIBLE);
+                text.setVisibility(View.VISIBLE);
+
+            }
+        });
+        // Agrega el LinearLayout a la vista raíz de la actividad
+        ViewGroup rootView = findViewById(android.R.id.content);
+        rootView.addView(linearLayout);
+    }
 }
