@@ -20,15 +20,7 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
     }
 
-    public void singUp(View view) {
-        // Oculta los botones y el texto existentes
-        View btnLogin = findViewById(R.id.login);
-        View btnAction = findViewById(R.id.Registro);
-        View text = findViewById(R.id.textView);
-        btnLogin.setVisibility(View.GONE);
-        btnAction.setVisibility(View.GONE);
-        text.setVisibility(View.GONE);
-
+    public void singUpForm(View view) {
 
         View imagen = findViewById(R.id.img_principal);
         imagen.setVisibility(View.GONE);
@@ -68,23 +60,14 @@ public class SignUpActivity extends AppCompatActivity {
         confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myText.setVisibility(View.GONE);
-                editText.setVisibility(View.GONE);
-                passwordEditText.setVisibility(View.GONE);
-                confirmButton.setVisibility(View.GONE);
-                editTextMail.setVisibility(View.GONE);
-                btnLogin.setVisibility(View.VISIBLE);
-                imagen.setVisibility(View.VISIBLE);
-                // btnAction.setVisibility(View.VISIBLE);
-                text.setVisibility(View.VISIBLE);
 
             }
         });
         // Agrega el LinearLayout a la vista raíz de la actividad
         ViewGroup rootView = findViewById(android.R.id.content);
         rootView.addView(linearLayout);
-    }
 
+    }
 
 
 

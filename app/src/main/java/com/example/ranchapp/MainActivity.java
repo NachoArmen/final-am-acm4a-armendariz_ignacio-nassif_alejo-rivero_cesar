@@ -1,6 +1,8 @@
 package com.example.ranchapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.TypedValue;
@@ -83,6 +85,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void singUp(View view) {
+        Intent intent = new Intent(this, SignUpActivity.class);
+        startActivity(intent);
+
+    }
 
 
 
