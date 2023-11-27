@@ -3,5 +3,11 @@
     <string name="registro">Registro</string>
     <string name="logout">logout</string>
     <string name="login">Login</string>
+    <string name="registrar">Registrar</string>
+    <string name="contrase_a">Contraseña:</string>
+    <string name="mail">Mail:</string>
+    <string name="empieza_a_disfrutar_de_la_nueva_forma_de_crear_eventos">Empieza a disfrutar de la nueva forma de crear eventos</string>
+    <string name="unete_a_la_ranchfam">UNETE A LA RANCHFAM</string>
+    <string name="nombre">Nombre:</string>
 
 </resources>

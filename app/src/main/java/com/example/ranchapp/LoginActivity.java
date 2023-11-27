@@ -23,16 +23,6 @@ public class LoginActivity extends AppCompatActivity {
 
     public void loginForm(View view) {
         // Oculta los botones y el texto existentes
-        View btnLogin = findViewById(R.id.login);
-        View btnAction = findViewById(R.id.Registro);
-        View btnLogout = findViewById(R.id.logout);
-        View text = findViewById(R.id.textView);
-        btnLogin.setVisibility(View.GONE);
-        btnAction.setVisibility(View.GONE);
-        text.setVisibility(View.GONE);
-
-        View imagen = findViewById(R.id.img_principal);
-        imagen.setVisibility(View.GONE);
         // Crea un nuevo TextView
         TextView myText = new TextView(view.getContext());
         myText.setText("Logueate");
@@ -64,15 +54,7 @@ public class LoginActivity extends AppCompatActivity {
         confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myText.setVisibility(View.GONE);
-                editText.setVisibility(View.GONE);
-                passwordEditText.setVisibility(View.GONE);
-                confirmButton.setVisibility(View.GONE);
-                btnLogout.setVisibility(View.VISIBLE);
-                imagen.setVisibility(View.VISIBLE);
-                // btnLogin.setVisibility(View.VISIBLE);
-                // btnAction.setVisibility(View.VISIBLE);
-                text.setVisibility(View.VISIBLE);
+
 
             }
         });
