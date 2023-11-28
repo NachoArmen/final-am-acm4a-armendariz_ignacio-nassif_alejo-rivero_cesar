@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFC107"
+    android:background="@color/yellow"
     tools:context=".SignUpActivity"
     tools:layout_editor_absoluteX="33dp"
     tools:layout_editor_absoluteY="0dp">
@@ -15,8 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="161dp"
         android:layout_marginEnd="160dp"
-        android:background="#5A002C"
-        android:backgroundTint="#5A002C"
+        android:onClick="singUpForm"
         android:text="@string/registrar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,6 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginStart="101dp"
+        android:autofillHints=""
         android:ems="10"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toTopOf="@+id/editTextClave"
@@ -38,8 +38,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNombre"
         app:layout_constraintVertical_bias="0.48"
-        tools:ignore="SpeakableTextPresentCheck"
-        android:autofillHints="" />
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/editTextNombre"
@@ -60,6 +59,7 @@
         android:id="@+id/editTextClave"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
+        android:autofillHints=""
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/signUpButton"
@@ -68,16 +68,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNombre"
         app:layout_constraintVertical_bias="0.494"
-        tools:ignore="SpeakableTextPresentCheck"
-        android:autofillHints="" />
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/textViewNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/editTextNombre"
         android:text="@string/nombre"
         android:textSize="20sp"
-        android:labelFor="@+id/editTextNombre"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/editTextNombre"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,9 +87,9 @@
         android:id="@+id/textViewMail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/editTextMail"
         android:text="@string/mail"
         android:textSize="20sp"
-        android:labelFor="@+id/editTextMail"
         app:layout_constraintBottom_toTopOf="@+id/textViewClave"
         app:layout_constraintEnd_toStartOf="@+id/editTextMail"
         app:layout_constraintHorizontal_bias="0.483"
@@ -102,9 +101,9 @@
         android:id="@+id/textViewClave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/editTextClave"
         android:text="@string/contrase_a"
         android:textSize="20sp"
-        android:labelFor="@+id/editTextClave"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/editTextClave"
         app:layout_constraintHorizontal_bias="0.666"
@@ -114,27 +113,28 @@
 
     <TextView
         android:id="@+id/textViewTitulo"
-        android:layout_width="400dp"
-        android:layout_height="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/unete_a_la_ranchfam"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.423"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.069"
+        app:layout_constraintVertical_bias="0.079"
         tools:ignore="TextSizeCheck" />
 
     <TextView
         android:id="@+id/textViewSub"
-        android:layout_width="277dp"
-        android:layout_height="45dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/empieza_a_disfrutar_de_la_nueva_forma_de_crear_eventos"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTitulo"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.084"
         tools:ignore="TextSizeCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

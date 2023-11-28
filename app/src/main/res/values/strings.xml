@@ -10,5 +10,8 @@
     <string name="unete_a_la_ranchfam">UNETE A LA RANCHFAM</string>
     <string name="nombre">Nombre:</string>
     <string name="ranchapp">RANCHAPP</string>
+    <string name="list_para_ranchear">¿List@ para ranchear?</string>
+    <string name="hola_de_nuevo">HOLA DE NUEVO</string>
+    <string name="beer">beer</string>
 
 </resources>
