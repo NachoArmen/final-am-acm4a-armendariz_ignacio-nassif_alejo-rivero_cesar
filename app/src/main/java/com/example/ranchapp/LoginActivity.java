@@ -28,6 +28,10 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
+
+
+
+
     public void loginForm(View view) {
         // Oculta los botones y el texto existentes
         // Crea un nuevo TextView
