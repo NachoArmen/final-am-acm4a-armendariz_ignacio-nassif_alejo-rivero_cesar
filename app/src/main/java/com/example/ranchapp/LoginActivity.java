@@ -23,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     public void log(View view){
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, WelcomeActivity.class);
         startActivity(intent);
     }
 
