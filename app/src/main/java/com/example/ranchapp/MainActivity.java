@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void singUp() {
+    public void singUp(View view) {
         Intent intent = new Intent(this, SignUpActivity.class);
         startActivity(intent);
     }
