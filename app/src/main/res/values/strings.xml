@@ -14,5 +14,10 @@
     <string name="hola_de_nuevo">HOLA DE NUEVO</string>
     <string name="beer">beer</string>
     <string name="bienvenido">BIENVENIDO</string>
+    <string name="crear_evento">Crear Evento</string>
+    <string name="ver_eventos">Ver Eventos</string>
+    <string name="Salir">Salir</string>
+    <string name="crear_nuevo_evento">Crear Nuevo Evento</string>
+    <string name="crear">Crear</string>
 
 </resources>
