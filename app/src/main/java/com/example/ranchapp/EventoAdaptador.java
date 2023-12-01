@@ -8,11 +8,13 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class EventoAdaptador extends RecyclerView.Adapter<EventoAdaptador.ViewHolder> {
 
     ArrayList<Evento> listaEventos;
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
     public EventoAdaptador(ArrayList<Evento> eventos) {
         this.listaEventos = eventos;
@@ -27,8 +29,13 @@ public class EventoAdaptador extends RecyclerView.Adapter<EventoAdaptador.ViewHo
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
        Evento eventoActual = listaEventos.get(position);
+
         holder.txtTitulo.setText(eventoActual.getTitulo());
-       // holder.txtTitulo.setText("Evento de prueba");
+        holder.txtLugar.setText(eventoActual.getLugar());
+        holder.txtDescripcion.setText(eventoActual.getDescripcion());
+        String fecha = sdf.format(eventoActual.getFecha());
+
+        holder.txtFecha.setText(fecha);       // holder.txtTitulo.setText("Evento de prueba");
     }
 
     @Override
