@@ -1,8 +1,9 @@
 package com.example.ranchapp;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Evento {
+public class Evento implements Serializable {
     private String titulo;
     private Date fecha;
     private String lugar;

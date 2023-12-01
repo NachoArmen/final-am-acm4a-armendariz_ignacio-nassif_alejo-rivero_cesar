@@ -1,8 +1,11 @@
 package com.example.ranchapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -13,17 +16,25 @@ public class mostrarEventos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mostrar_eventos);
-        ArrayList<Evento> eventos = (ArrayList<Evento>) getIntent().getSerializableExtra("eventos");
+        RecyclerView recyclerEventos = findViewById(R.id.recyclerEventos);
 
-        for(Evento evento : eventos) {
-            // Mostrar en un TextView por ejemplo
-            TextView textView = findViewById(R.id.textView);
-            textView.setText(evento.getTitulo());
+        LinearLayoutManager manager = new LinearLayoutManager(this);
+        recyclerEventos.setLayoutManager(manager);
 
-            // Otra forma es mostrarlos en un RecyclerView
-            // https://developer.android.com/guide/topics/ui/layout/recyclerview
+        ArrayList<Evento> eventos = new ArrayList<>();
+
+        eventos = (ArrayList<Evento>) getIntent().getSerializableExtra("eventos");
+        Log.i("Eventos recibidos", eventos.toString());
+
+        if(eventos == null) {
+            Log.e("Error", "No se recibieron eventos");
+            return;
         }
+
+        EventoAdaptador adaptador = new EventoAdaptador(eventos);
+        recyclerEventos.setAdapter(adaptador);
+
+// Opcional: mejorar rendimiento
+        recyclerEventos.setHasFixedSize(true);
     }
-
-
 }

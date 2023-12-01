@@ -18,7 +18,14 @@ public class WelcomeActivity extends AppCompatActivity {
         eventos = (ArrayList<Evento>) getIntent().getSerializableExtra("eventos");
         //hacer los checkbox o la lista de los eventos y un boton de crear, al darle crear te debe mostrar los enventos creados
     }
+    @Override
+    protected void onResume() {
 
+        super.onResume();
+
+        eventos = (ArrayList<Evento>) getIntent().getSerializableExtra("eventos");
+
+    }
     public void create_event(View view){
         Intent intent = new Intent(this, CreateEventActivity.class);
         startActivity(intent);
