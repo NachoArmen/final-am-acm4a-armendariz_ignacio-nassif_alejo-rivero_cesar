@@ -19,5 +19,10 @@
     <string name="Salir">Salir</string>
     <string name="crear_nuevo_evento">Crear Nuevo Evento</string>
     <string name="crear">Crear</string>
+    <string name="t_tulo_del_evento">Título del evento</string>
+    <string name="fecha_del_evento">Fecha del evento</string>
+    <string name="titulo_del_evento" />
+    <string name="lugar_del_evento">Lugar del evento</string>
+    <string name="descripcion_del_evento">Descripcion del evento</string>
 
 </resources>

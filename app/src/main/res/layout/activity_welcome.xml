@@ -14,8 +14,7 @@
         android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintTopp_oBottomOf="@id/textView2">
+        >
 
         <Button
             android:id="@+id/create_event_button"
@@ -28,6 +27,7 @@
             android:id="@+id/view_events_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="show_event"
             android:text="@string/ver_eventos" />
 
         <Button
