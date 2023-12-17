@@ -24,5 +24,6 @@
     <string name="lugar_del_evento">Lugar del evento</string>
     <string name="descripcion_del_evento">Descripcion del evento</string>
     <string name="llevame">Llevame</string>
+    <string name="volver">Volver</string>
 
 </resources>

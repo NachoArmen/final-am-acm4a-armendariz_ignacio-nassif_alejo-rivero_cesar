@@ -87,5 +87,9 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
 
+    public void volver(View view){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
 
+}
 }
