@@ -137,4 +137,5 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewTitulo"
         app:layout_constraintVertical_bias="0.084"
         tools:ignore="TextSizeCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
