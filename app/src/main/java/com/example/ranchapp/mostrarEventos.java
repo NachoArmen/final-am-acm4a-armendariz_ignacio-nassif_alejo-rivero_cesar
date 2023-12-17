@@ -38,6 +38,8 @@ public class mostrarEventos extends AppCompatActivity {
             Log.e("Error", "No se recibieron eventos");
             return;
         }
+        Log.i("Tamaño de la lista", "La lista de eventos tiene " + eventos.size() + " elementos");
+
 
         EventoAdaptador adaptador = new EventoAdaptador(eventos);
         recyclerEventos.setAdapter(adaptador);
@@ -48,8 +50,8 @@ public class mostrarEventos extends AppCompatActivity {
 
     public void salir(View view){
         Intent intent = new Intent(this, WelcomeActivity.class);
-        startActivity(intent);
-
+        setResult(RESULT_OK, intent);
+        finish();
 
     }
 

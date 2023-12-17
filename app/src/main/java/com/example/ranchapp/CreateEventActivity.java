@@ -42,22 +42,13 @@ public class CreateEventActivity extends AppCompatActivity {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
         //creo el evento como objeto
         Evento evento = new Evento(titulo,fecha,lugar,descripcion);
-        ArrayList<Evento> listaEventos = new ArrayList<Evento>();
-        listaEventos.add(evento);
-        Log.i("Eventos", listaEventos.toString());
-
-
         //le meto un toast que diga evento creado- para el final-
 
         Intent intent = new Intent(this, WelcomeActivity.class);
-        intent.putExtra("eventos", listaEventos);
-        startActivity(intent);
-
-
-
-
+        intent.putExtra("evento", evento);
+        setResult(RESULT_OK, intent);
+        finish();
     }
 }
