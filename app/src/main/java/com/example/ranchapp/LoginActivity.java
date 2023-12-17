@@ -34,9 +34,6 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-
-
-
     // Metodo del onClick de boton login
     public void log(View view){
         String mail = email.getText().toString();
@@ -45,9 +42,16 @@ public class LoginActivity extends AppCompatActivity {
         mAuth.signInWithEmailAndPassword(mail,pass)
                 .addOnCompleteListener(this, task -> {
             if (task.isSuccessful()){
-                Intent intent = new Intent(this, WelcomeActivity.class);
-                startActivity(intent);
-                finish();
+                FirebaseUser currentUser = mAuth.getCurrentUser();
+                Boolean validated = currentUser.isEmailVerified();
+                if (!validated){
+                    Toast.makeText(LoginActivity.this, "Por favor verifique su email.", Toast.LENGTH_SHORT).show();
+                }else {
+                    Intent intent = new Intent(this, WelcomeActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+
             }else {
                 Toast.makeText(LoginActivity.this, "Campos Incorrectos.Intente de nuevo", Toast.LENGTH_SHORT).show();
             }

@@ -64,12 +64,10 @@ public class SignUpActivity extends AppCompatActivity {
                                             if(!validated){
                                                 Toast.makeText(SignUpActivity.this, "Verifique su buzon de entrada." , Toast.LENGTH_LONG).show();
                                                 user.sendEmailVerification();
-                                            }else{
+                                            }
                                                 Intent intent = new Intent(this, LoginActivity.class);
                                                 startActivity(intent);
                                                 finish();
-                                            }
-
                                         }
                                     });
                         }
