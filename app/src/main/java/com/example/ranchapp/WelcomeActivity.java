@@ -51,7 +51,7 @@ public class WelcomeActivity extends AppCompatActivity {
         this.mAuth.signOut();
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
-        
+
     }
 
 }
