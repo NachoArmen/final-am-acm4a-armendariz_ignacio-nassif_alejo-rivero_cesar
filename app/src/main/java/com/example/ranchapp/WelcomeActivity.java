@@ -66,6 +66,7 @@ public class WelcomeActivity extends AppCompatActivity {
     }
     public void create_event(View view){
         Intent intent = new Intent(this, CreateEventActivity.class);
+        intent.putExtra("imageUrl", "https://www.telam.com.ar/thumbs/bluesteel/advf/imagenes/2020/06/5ed4e9b33f900_450.jpg");
         startActivityForResult(intent, CREATE_EVENT_REQUEST_CODE);
 
     }
