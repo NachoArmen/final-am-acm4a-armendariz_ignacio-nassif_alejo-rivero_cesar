@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -30,6 +31,9 @@ public class LoginActivity extends AppCompatActivity {
         email = findViewById(R.id.editTextNombreLog);
         password = findViewById(R.id.editTextPasswordLog);
     }
+
+
+
 
 
 
