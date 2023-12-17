@@ -25,7 +25,20 @@ public class WelcomeActivity extends AppCompatActivity {
         this.mAuth = FirebaseAuth.getInstance();
         eventos = (ArrayList<Evento>) getIntent().getSerializableExtra("eventos");
         //hacer los checkbox o la lista de los eventos y un boton de crear, al darle crear te debe mostrar los enventos creados
+
+
     }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = this.mAuth.getCurrentUser();
+        TextView msg = findViewById(R.id.msgBienvenida);
+        msg.setText("Ha ingresado con " + currentUser.getEmail());
+
+    }
+
     @Override
     protected void onResume() {
 

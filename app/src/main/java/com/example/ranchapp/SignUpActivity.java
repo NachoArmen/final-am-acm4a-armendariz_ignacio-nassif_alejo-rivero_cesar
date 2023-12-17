@@ -59,9 +59,17 @@ public class SignUpActivity extends AppCompatActivity {
 
                                         if (task1.isSuccessful()) {
                                             Toast.makeText(SignUpActivity.this, "Registro Completado", Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(this, LoginActivity.class);
-                                            startActivity(intent);
-                                            finish();
+
+                                            Boolean validated = user.isEmailVerified();
+                                            if(!validated){
+                                                Toast.makeText(SignUpActivity.this, "Verifique su buzon de entrada." , Toast.LENGTH_LONG).show();
+                                                user.sendEmailVerification();
+                                            }else{
+                                                Intent intent = new Intent(this, LoginActivity.class);
+                                                startActivity(intent);
+                                                finish();
+                                            }
+
                                         }
                                     });
                         }
