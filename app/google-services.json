@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "261242141903",
-    "project_id": "final-appmobile-arn",
-    "storage_bucket": "final-appmobile-arn.appspot.com"
+    "project_number": "300425399998",
+    "project_id": "ranchapp-ced27",
+    "storage_bucket": "ranchapp-ced27.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:261242141903:android:7d0a6caa3ee1713fd04bba",
+        "mobilesdk_app_id": "1:300425399998:android:107262d8c528d2c38418ef",
         "android_client_info": {
-          "package_name": "com.example.firebase_final_ejemplo"
+          "package_name": "com.example.ranchapp"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCIglYFpO9EtS3Aj2SPNKMhN22brxmWGA8"
+          "current_key": "AIzaSyA-pvbxBWFDUKHE629UqyCUNVn66MnuWr8"
         }
       ],
       "services": {

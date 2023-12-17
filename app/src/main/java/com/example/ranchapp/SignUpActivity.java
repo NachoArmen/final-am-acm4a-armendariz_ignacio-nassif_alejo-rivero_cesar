@@ -13,7 +13,14 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class SignUpActivity extends AppCompatActivity {
+
+    private FirebaseAuth mAuth;
+
+    private
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
