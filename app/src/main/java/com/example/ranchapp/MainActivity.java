@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
     public void login(View view) {
         FirebaseUser currentUser= this.mAuth.getCurrentUser();
         if (currentUser != null){
-            Intent intent = new Intent(this, WelcomeActivity.class);
-            startActivity(intent);
+                Intent intent = new Intent(this, WelcomeActivity.class);
+                startActivity(intent);
         }else{
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
