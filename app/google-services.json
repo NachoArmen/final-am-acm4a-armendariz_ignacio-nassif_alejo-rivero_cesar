@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "261242141903",
+    "project_id": "final-appmobile-arn",
+    "storage_bucket": "final-appmobile-arn.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:261242141903:android:7d0a6caa3ee1713fd04bba",
+        "android_client_info": {
+          "package_name": "com.example.firebase_final_ejemplo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIglYFpO9EtS3Aj2SPNKMhN22brxmWGA8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
