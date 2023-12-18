@@ -1,12 +1,9 @@
 package com.example.ranchapp;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,15 +11,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.io.IOException;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.ArrayList;
 
 public class WelcomeActivity extends AppCompatActivity {
     ArrayList<Evento> eventos;
     private FirebaseAuth mAuth;
+
+    private FirebaseFirestore db =FirebaseFirestore.getInstance();
+
+    private TextView nombre;
+    private TextView apellido;
+    private TextView validado;
+
     private static final int CREATE_EVENT_REQUEST_CODE = 1;
 
     @Override
@@ -30,6 +34,7 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
         this.mAuth = FirebaseAuth.getInstance();
+
         if (eventos == null) {
             eventos = new ArrayList<>(); // Inicializa la lista solo si es null
         }
@@ -41,43 +46,11 @@ public class WelcomeActivity extends AppCompatActivity {
         FirebaseUser currentUser = this.mAuth.getCurrentUser();
         TextView msg = findViewById(R.id.msgBienvenida);
         msg.setText("Ha ingresado con " + currentUser.getEmail());
-        // Definimos url de la imagen
-        String imageUrl = "https://www.telam.com.ar/thumbs/bluesteel/advf/imagenes/2020/06/5ed4e9b33f900_450.jpg";
 
-        // Creamos imageView para mostrar imagen
-        ImageView imageView = findViewById(R.id.imageView);
-
-        // Creamos metodo para cargar la imagen en segundo plano
-        private void loadImage() {
-
-
-            URLConnection connection = new URL(imageUrl).openConnection();
-
-
-            connection.setConnectTimeout(3000);
-            connection.setReadTimeout(3000);
-
-
-            byte[] imageData = new byte[connection.getContentLength()];
-            try {
-                connection.getInputStream().read(imageData);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-
-            // Convertimos imagen a bitmap
-            Bitmap bitmap = BitmapFactory.decodeByteArray(imageData, 0, imageData.length);
-
-            // Seteamos imagen a imageview
-            if (bitmap != null) {
-                imageView.setImageBitmap(bitmap);
-            } else {
-                imageView.setImageResource(R.drawable.error);
-            }
+        if (currentUser != null) {
+            userData();
         }
 
-        // Cargar imagen en el fondo
-        loadImage();
     }
 
 
@@ -111,7 +84,6 @@ public class WelcomeActivity extends AppCompatActivity {
     }
     public void create_event(View view){
         Intent intent = new Intent(this, CreateEventActivity.class);
-        intent.putExtra("imageUrl", "https://www.telam.com.ar/thumbs/bluesteel/advf/imagenes/2020/06/5ed4e9b33f900_450.jpg");
         startActivityForResult(intent, CREATE_EVENT_REQUEST_CODE);
 
     }
@@ -132,9 +104,38 @@ public class WelcomeActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
-    public void downloadImage(View v){
-        DownloadImage image = new DownloadImage();
-        image.execute("https://www.telam.com.ar/thumbs/bluesteel/advf/imagenes/2020/06/5ed4e9b33f900_450.jpg");
+
+
+
+    private void userData() {
+        DocumentReference docRef = db.collection("users").document("u1");
+        docRef.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()){
+                DocumentSnapshot document = task.getResult();
+                if (document.exists()){
+                    String lastname = document.getString("lastname");
+                    String name = document.getString("name");
+                    String validated = String.valueOf(document.getBoolean("validated"));
+
+                    nombre =  findViewById(R.id.tvNameFB);
+                    nombre.setText(name);
+
+                    apellido = findViewById(R.id.tvLastNameFB);
+                    apellido.setText(lastname);
+
+                    validado = findViewById(R.id.tvValidatedFB);
+                    validado.setText(validated);
+
+
+
+                }
+            }
+        });
     }
+
+
+
+
+
 
 }
